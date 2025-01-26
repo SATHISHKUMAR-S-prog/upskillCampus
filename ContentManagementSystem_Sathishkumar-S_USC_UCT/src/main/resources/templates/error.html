@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head lang="en">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Error</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="/build/bundle.css"/>
+</head>
+
+<body>
+	<div class="error-page">
+		<h1 class="text-center error-page-main-message" th:text="${errorStatus} + '. ' + ${errorMessage}"></h1>
+
+		<div th:if="${isDebugMode}" class="text-center error-page-debug-details">
+			<div th:inline="text">
+				<h4 class="debug-details-title">
+					HTTP Error Status:
+				</h4>
+
+				[[${debugError.httpStatus}]]
+			</div>
+
+			<div th:inline="text">
+				<h4 class="debug-details-title">
+					Timestamp:
+				</h4>
+
+				[[${debugError.timestamp}]]
+			</div>
+
+			<div th:inline="text">
+				<h4 class="debug-details-title">
+					Error:
+				</h4>
+
+				[[${debugError.error}]]
+			</div>
+
+			<div th:inline="text">
+				<h4 class="debug-details-title">
+					Error message:
+				</h4>
+
+				[[${debugError.message}]]
+			</div>
+
+			<div th:inline="text">
+				<h4 class="debug-details-title">
+					Stack trace:
+				</h4>
+
+				[[${debugError.trace}]]
+			</div>
+		</div>
+
+		<div class="text-center error-page-return">
+			<a href="/">
+				<h4>Return home</h4>
+			</a>
+		</div>
+	</div>
+</body>
+</html>

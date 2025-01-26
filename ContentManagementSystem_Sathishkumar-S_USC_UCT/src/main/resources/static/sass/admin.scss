@@ -1,0 +1,115 @@
+.admin-nav-sidebar,
+.admin-nav-header {
+	background-color: $admin-nav-background-color;
+
+	.navbar-inverse {
+		border-color: transparent;
+		background-color: transparent;
+	}
+}
+
+.admin-nav-header {
+	border-bottom: 1px solid $border-light-grey-color;
+
+	.navbar {
+		margin-bottom: 0;
+	}
+}
+
+.admin-nav-sidebar {
+	position: fixed;
+	width: $admin-sidebar-width;
+	height: 100%;
+	background-color: $admin-nav-background-color;
+	border-right: 1px solid $border-light-grey-color;
+	padding: 10px 0;
+
+	.nav {
+		.glyphicon {
+			margin-right: 15px;
+	    color: $admin-nav-glyphicon-color;
+	  }
+
+	  .dropdown-menu {
+	  	position: inherit;
+	  	-webkit-box-shadow: none;
+	  	box-shadow: none;
+
+	  	> .active > a {
+	  		&,
+				&:focus,
+				&:hover {
+					background-color: $admin-sidebar-hover-color;
+					color: #fff;
+				}
+	  	}
+	  }
+	}
+
+	.navbar-inverse {
+		.navbar-nav {
+			> li > a {
+				color: #333;
+			}
+
+			> .active > a,
+			> .open > a {
+				&,
+				&:focus,
+				&:hover {
+					background-color: $admin-sidebar-hover-color;
+				}
+
+				.glyphicon {
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	.navbar-nav > li {
+		float: none;
+
+		> .dropdown-menu {
+			margin-bottom: 12px;
+		}
+	}
+}
+
+.admin-route-content-wrapper {
+	margin-left: $admin-sidebar-width + 20px;
+}
+
+.admin-list-of-users-table {
+	td, th {
+		border: 1px solid black;
+		padding: 10px;
+	}
+
+	td {
+		white-space: nowrap;
+	}
+}
+
+.pie-chart {
+	position: relative;
+	height: 450px;
+	width: 340px;
+	padding: 10px;
+
+	.pie-chart-details {
+		text-align: center;
+		position: absolute;
+		left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+	}
+
+	.pie-chart-label {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
